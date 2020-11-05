@@ -1,0 +1,33 @@
+server:
+  port: 9882
+spring:
+  profiles:
+    active: dev
+  application:
+    name: user
+  datasource:
+    name: goodgoodsrs
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/goodgoodsrs?serverTimezone=UTC
+    username: root
+    password: root
+    # 使用druid连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+  #nacos
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+mybatis:
+  type-aliases-package: com.sxl.goodgoodsrs.api.user.model
+
+

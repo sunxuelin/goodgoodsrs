@@ -1,0 +1,24 @@
+server:
+  port: 9876
+
+spring:
+  cloud:
+    discovery:
+      reactive:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    loadbalancer:
+      retry:
+        enabled: true
+
+  #nacos
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        extension-configs[0]:
+          dataId: goodgoodsrs.yaml
+
