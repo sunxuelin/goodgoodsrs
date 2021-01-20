@@ -20,10 +20,10 @@ public class RecommendController {
 
     @RequestMapping("/page")
     @ResponseBody
-    public QueryResponseResult page(@RequestParam(value = "recommend",required = false)Recommend recommend,
+    public QueryResponseResult page(
                                     @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
                                     @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
-        Page page = recommendService.page(recommend, new Page(pageNum,pageSize));
+        Page page = recommendService.page( new Page(pageNum,pageSize));
         return  new QueryResponseResult(CommonCode.SUCCESS,page);
     }
 

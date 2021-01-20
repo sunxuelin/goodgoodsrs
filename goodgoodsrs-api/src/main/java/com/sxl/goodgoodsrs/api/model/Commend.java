@@ -9,8 +9,10 @@ import lombok.Setter;
 @Setter
 @Getter
 /**
- * 喜欢model
+ * 评论model
  */
-public class like extends CommonModel {
-    private String recommend_id;
+public class Commend extends CommonModel {
+    private String recommendId;
+    private String userId;
+    private String commendReply;
 }

@@ -16,11 +16,10 @@ spring:
     nacos:
       config:
         server-addr: localhost:8848
-        group: DEFAULT_GROUP
-        file-extension: yaml
-        namespace: public
 
 mybatis:
   type-aliases-package: com.sxl.goodgoodsrs.api.recommend.model
+
+
 
 
